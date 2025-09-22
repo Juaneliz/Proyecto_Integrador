@@ -1,2 +1,3 @@
 # Proyecto_Integrador
-Este proyecto consiste ne el uso de estructuras de datos lineales y no lineales para obtener valores dependiendo de los algoritmos de ordenamiento.
+Lo que realiza este proyecto es un ordenamiento y filtrado de datos a través de algoritmos y estructuras.
+Con ello realizamos un buscador que se enfoca en modificar una base de datos desordenada para mantener un seguimiento acordado a lo necesitado.
