@@ -38,3 +38,8 @@ Como MergeSort, debido a su complejidad.
 El algoritmo seleccionado cumple con los requisitos del programa y es eficiente para el tamaño de los archivos CSV manejados.
 
 La elección está justificada por la necesidad de mantener filas completas sincronizadas, la facilidad de implementación y la adecuación al número de registros.
+
+### Extras
+
+Se utilizó la librería de vector para realizar diferentes acciones. La primera es el uso de stod. Que es convertir un string a double. Posteriormente se utilizó el push_back.
+Dicha función cumple con el acometido de agregar elementos a un vector al final del mismo.
