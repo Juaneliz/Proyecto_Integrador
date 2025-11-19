@@ -1,14 +1,13 @@
 #include <iostream>
 #include "clima.h"
-#include "insertion_sort.h"
+#include "double_list.h"
 
 using namespace std;
 
 int main() {
     Registro_clima clima;
     int opcion = 0;
-    string fecha, descripcion;
-    double tempMax, tempMin, humedad;
+
 
     cout << "=== Bienvenido al Sistema de Registro del Clima ===\n";
 
@@ -21,7 +20,7 @@ int main() {
         cout << "1. Mostrar datos\n";
         cout << "2. Agregar nuevo registro\n";
         cout << "3. Eliminar registro por indice\n";
-        cout << "4. Deshacer última acción\n";
+        cout << "4. Guardar CSV\n";
         cout << "5. Ordenar por temperatura maxima\n";
         cout << "6. Ordenar por temperatura minima\n";
         cout << "7. Ordenar por humedad\n";
@@ -35,31 +34,35 @@ int main() {
             clima.mostrarDatos();
         } 
         else if (opcion == 2) {
+            string f,tipo;
+            double tmax,tmin,hum;
             cout << "\nIngrese la fecha (YYYY-MM-DD): ";
-            cin >> fecha;
+            cin >> f;
             cout << "Ingrese temperatura maxima: ";
-            cin >> tempMax;
+            cin >> tmax;
             cout << "Ingrese temperatura minima: ";
-            cin >> tempMin;
+            cin >> tmin;
             cout << "Ingrese humedad: ";
-            cin >> humedad;
+            cin >> hum;
             cout << "Ingrese descripcion del clima: ";
             cin.ignore();
-            getline(cin, descripcion);
+            cout <<"Tipo";
 
-            clima.agregarRegistro(fecha, tempMax, tempMin, humedad, descripcion);
+            getline(cin, tipo);
+
+            clima.agregarRegistro(f, tmax, tmin, hum, tipo);
             cout << "\nRegistro agregado correctamente.\n";
         } 
         else if (opcion == 3) {
-            int pos;
+            int idx;
             cout << "\nIngrese el indice del registro a eliminar: ";
-            cin >> pos;
-            clima.eliminarRegistro(pos);
+            cin >> idx;
+            clima.eliminarRegistro(idx);
             cout << "Registro eliminado (si existia).\n";
         } 
         else if (opcion == 4) {
-            cout << "\n=== Deshaciendo ultima acción ===\n";
-            clima.deshacerUltimaAccion();
+            cout << "\n=== Guardar CSV ===\n";
+            clima.guardarCSV("registro_clima.csv");
         } 
         else if (opcion == 5) {
             cout << "\n=== Ordenando por Temperatura Maxima ===\n";
@@ -89,10 +92,6 @@ int main() {
             cout << "\nOpcion no valida. Intente de nuevo.\n";
         }
     }
-
-    return 0;
-}
-
 
     return 0;
 }
