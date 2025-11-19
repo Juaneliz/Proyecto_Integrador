@@ -13,8 +13,8 @@ Dichos factores eran: Fecha, TempMax, Tempmin, Humedad, Tipo de Clima.
 En su peor caso ,los datos estarían completamente desordenados, usando complejidad O(n²).
 En el mejor caso, cuando los datos ya están ordenados, la complejidad es O(n).
 
-### Swapfila
-La función swapfila asegura que todas las columnas asociadas a un registro se muevan juntas, garantizando la integridad de los datos.
+### Templae <typename comparator>
+La función  asegura que todas las columnas asociadas a un registro se muevan juntas, garantizando la integridad de los datos.
 Aunque cada intercambio mueve varias columnas, la complejidad asintótica del algoritmo no se ve afectada.
 
 ### Función de agregación y eliminación 
@@ -60,3 +60,6 @@ La elección está justificada por la necesidad de mantener filas completas sinc
 
 Se utilizó la librería de vector para realizar diferentes acciones. La primera es el uso de stod. Que es convertir un string a double. Posteriormente se utilizó el push_back.
 Dicha función cumple con el acometido de agregar elementos a un vector al final del mismo.
+Para el manejo del insertion_sort dentro de la double list. Considerando que manejamos punteros y un desarrollo diferente a stack, el insertion se tiene que actualizar para poder 
+relacionarse con la double_linked_list. Par ello en su funcion para comparar valores se manejo un desarrollo de template.
+Template typename comparator lo que hace es mencionar que en esa plantilla se realizar[a una comparacion a traves de los valores dentro de la lista.
